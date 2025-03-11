@@ -26,7 +26,7 @@ def batch(
             help="The airport code (e.g., 'JFK')",
         ),
         path: Path = typer.Argument(
-            "/data/historical",
+            "/app/data/historical",
             help="Directory containing CSV files with flight data",
             exists=True,
             dir_okay=True,
@@ -61,7 +61,7 @@ def update(
         help="The airport code (e.g., 'JFK')",
     ),
     path: Path = typer.Argument(
-        "/data/historical",
+        "/app/data/historical",
         help="Directory containing CSV files with flight data",
         exists=True,
         dir_okay=True,
@@ -85,14 +85,14 @@ def update(
 @app.command()
 def process(
     input_path: Path = typer.Argument(
-        "/data/historical",
+        "/app/data/historical",
         help="Directory containing CSV files with flight data",
         exists=True,
         dir_okay=True,
         file_okay=False,
     ),
     output_path: Path = typer.Argument(
-        "/app/dbt/seeds/data.csv",
+        "/app/dbt/seeds/raw.csv",
         help="Path to save the processed data. If not provided, outputs to [input_path]/processed.csv",
     ),
 ) -> None:
