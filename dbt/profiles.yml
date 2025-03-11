@@ -1,0 +1,8 @@
+flights:
+  outputs:
+    prod:
+      type: duckdb
+      path: /data/db/prod.duckdb
+      threads: 4
+
+  target: prod

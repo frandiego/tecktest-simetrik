@@ -1,0 +1,36 @@
+version: 2
+
+seeds:
+  - name: data
+    config:
+      schema: bronze
+      column_types:
+        id: char
+        number: char
+        code: char
+        date: date
+        flight_type: char
+        status: char
+        codeshare_status: char
+        is_cargo: bool
+        call_sign: char
+        airline_name: char
+        airline_iata: char
+        airline_icao: char
+        aircraft_model: char
+        aircraft_mode_s: char
+        aircraft_reg: char
+        terminal: int
+        bagagge_belt: char
+        quality: char
+        gate: char
+        airport_icao: char
+        airport_iata: char
+        airport_name: char
+        airport_time_zone: char
+        scheduled_time_utc: char
+        scheduled_time_local: char
+        revised_time_utc: char
+        revised_time_local: char
+        runway_time_utc: char
+        runway_time_local: char

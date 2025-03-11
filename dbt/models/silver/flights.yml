@@ -1,0 +1,80 @@
+models:
+  - name: flights
+    config:
+      materialized: table
+      contract:
+        enforced: true
+    columns:
+      - name: id
+        data_type: char
+        constraints:
+          - type: not_null
+      - name: number
+        data_type: char
+        constraints:
+          - type: not_null
+      - name: code
+        data_type: char
+        constraints:
+          - type: not_null
+      - name: date
+        data_type: date
+      - name: flight_type
+        data_type: char
+        constraints:
+          - type: not_null
+      - name: status
+        data_type: char
+      - name: is_operator
+        data_type: bool
+      - name: is_codeshared
+        data_type: bool
+      - name: is_cargo
+        data_type: bool
+      - name: call_sign
+        data_type: char
+
+      - name: call_sign
+        data_type: char
+      - name: airline_name
+        data_type: char
+      - name: airline_iata
+        data_type: char
+      - name: airline_icao
+        data_type: char
+      - name: aircraft_id
+        data_type: char
+      - name: plane_id
+        data_type: char
+      - name: aircraft_model
+        data_type: char
+      - name: aircraft_mode_s
+        data_type: char
+      - name: aircraft_reg
+        data_type: char
+      - name: terminal
+        data_type: int
+      - name: quality
+        data_type: char
+      - name: gate
+        data_type: char
+      - name: airport_name
+        data_type: char
+      - name: airport_iata
+        data_type: char
+      - name: airport_icao
+        data_type: char
+      - name: airport_time_zone
+        data_type: char
+      - name: scheduled_time_utc
+        data_type: TIMESTAMP WITH TIME ZONE
+      - name: scheduled_time_local
+        data_type: TIMESTAMP WITH TIME ZONE
+      - name: revised_time_utc
+        data_type: TIMESTAMP WITH TIME ZONE
+      - name: revised_time_local
+        data_type: TIMESTAMP WITH TIME ZONE
+      - name: runway_time_utc
+        data_type: TIMESTAMP WITH TIME ZONE
+      - name: runway_time_local
+        data_type: TIMESTAMP WITH TIME ZONE
