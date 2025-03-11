@@ -1,0 +1,12 @@
+models:
+  - name: airports
+    config:
+      materialized: table
+    columns:
+      - name: airport_iata
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('flights')
+              field: airport_iata

@@ -33,7 +33,6 @@ models:
         data_type: bool
       - name: call_sign
         data_type: char
-
       - name: call_sign
         data_type: char
       - name: airline_name

@@ -1,0 +1,11 @@
+models:
+  - name: aircrafts
+    config:
+      materialized: table
+    columns:
+      - name: aircraft_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('flights')
+              field: aircraft_id

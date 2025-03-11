@@ -1,0 +1,18 @@
+models:
+  - name: planes
+    config:
+      materialized: table
+    columns:
+      - name: plane_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('flights')
+              field: plane_id
+      - name: aircraft_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('flights')
+              field: aircraft_id
