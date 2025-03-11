@@ -66,3 +66,13 @@ orchestrator:  		 Create a the dagster orchestrator to ingest real-time data
 so you can download the repo and run `make database` to create the database from scratch and then `make sql` to make queries.
 
 Finally, the `infra/data-ingestion.tf` has information on how an ingestion system could be implemented in aws using AWS-SNS, AWS-Firehose and AWS-DocumentDB. This way we would have a fully functional service to send data and store it in a database. 
+
+
+---
+
+<div align="EMR of DataBase">
+  <p>Dagster Output</p>
+  <img src="images/emr.png" alt="Alt text" width="900">
+</div>
+
+I a star database, in a medallion architecture, the bronze (`raw`) table can feed a cleaner and more curated version (`flithgs`) that allows generating tables such as `aircrafts`, `airports`, `planes`, `status`, `time` and `travels`.
