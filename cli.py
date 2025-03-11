@@ -12,6 +12,49 @@ app = typer.Typer(
 
 
 @app.command()
+def batch(
+        date_from: str = typer.Argument(
+            "2025-02-11",
+            help="First date (included) for the batch download in %Y-%m-%d format",
+        ),
+        date_to: str = typer.Argument(
+            "2025-03-11",
+            help="Last date (included) for the batch download in %Y-%m-%d format",
+        ),
+        airport_code: str = typer.Argument(
+            "BOG",
+            help="The airport code (e.g., 'JFK')",
+        ),
+        path: Path = typer.Argument(
+            "/data/historical",
+            help="Directory containing CSV files with flight data",
+            exists=True,
+            dir_okay=True,
+            file_okay=False,
+        ),
+    ):  
+    """
+    Download batch data for historical fligth date
+    """
+    try:
+        FlightDataHistorical.save_data_range(
+              date_start = date_from, 
+              date_end = date_to, 
+              airport_code = airport_code, 
+              path = path, 
+              overwrite = True,
+        )
+        logger.info(
+            f"Successfully downloaded flight data for {airport_code}",
+        )
+
+    except Exception as e:
+        logger.error(f"Error downloading data: {e}")
+        typer.Exit(code=1)
+
+
+
+@app.command()
 def update(
     airport_code: str = typer.Argument(
         "BOG",
