@@ -38,4 +38,5 @@ RUN uv add \
 
 ADD . .
 EXPOSE 3000
+EXPOSE 8080
 
